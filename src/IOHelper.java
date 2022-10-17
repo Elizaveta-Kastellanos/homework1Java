@@ -12,16 +12,16 @@ public class IOHelper {
         return n;
     }
 
-    public int[] writeArrayMultipleOfN(int n) {
+    public int[] writeArrayMultipleOfN(int n, int ii) {
         int count = 0;
-        for(int i = 0; i < Short.MAX_VALUE - 1; i++){
+        for(int i = ii; i < Short.MAX_VALUE - 1; i++){
             if(i % n == 0){
                 count++;
             }
         }
         int[] m1 = new int[count]; // 32767
         int counterMas = 0;
-        for (int i = 1; i < Short.MAX_VALUE; i++){
+        for (int i = ii; i < Short.MAX_VALUE; i++){
             if (i % n == 0){
                 m1[counterMas] = i;
                 counterMas++;
@@ -30,16 +30,16 @@ public class IOHelper {
         return m1;
     }
 
-    public int[] writeArrayNon_multiplesOfN(int n){
+    public int[] writeArrayNon_multiplesOfN(int n, int ii){
         int count = 0;
-        for(int i = Short.MIN_VALUE; i < 0; i++){
+        for(int i = Short.MIN_VALUE; i < ii + 1; i++){
             if(i % n != 0){
                 count++;
             }
         }
         int[] mas = new int[count];
         int counterMas = 0;
-        for (int i = Short.MIN_VALUE; i < 0; i++){
+        for (int i = Short.MIN_VALUE; i < ii + 1; i++){
             if(i % n != 0){
                 mas[counterMas] = i;
                 counterMas++;
