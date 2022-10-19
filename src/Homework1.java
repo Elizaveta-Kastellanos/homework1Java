@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class IOHelper {
+public class Homework1 {
     public int saveRandomNumber(){
         Random rn = new Random();
         int i = rn.nextInt(-1000,1000);
