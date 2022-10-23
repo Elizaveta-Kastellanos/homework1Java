@@ -1,40 +1,28 @@
-import com.sun.source.util.SourcePositions;
-
-import java.io.FileWriter;
-import java.io.IOException;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.List;
 
 public class Program {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // 1.)
-        Homework2 hw2 = new Homework2();
-        String str1 = "Hello my sweet candy, my yummy muffin";
-        String str2 = "my";
-        System.out.println(hw2.Task1(str1,str2));
+        String str1 = "Ivanova Marina";
+        String str2 = "Petrov Alexandr";
+        Homework3 hw3 = new Homework3();
+        List<String> myList = hw3.CreateAndAddNewList(str1,str2);
+        myList.forEach(n -> System.out.println(n));
         // 2.)
-        String one = "1,2,3,4,5";
-        String two = "5,4,3,2,1";
-        System.out.println(hw2.CheckForReverse(one, two));
+         hw3.AdditionToEachCharExclamationPoint();
         // 3.)
-        String task2 = "Hello,my name is Krullia";
-        char[] mas = task2.toCharArray();
-        hw2.RecursionReverse(mas, 0, mas.length - 1);
-        System.out.print(new String(mas));
-        System.out.println("------------------");
+        List<int[]> myNumArray = hw3.InsertItemInHead(new int[]{-3,-2, -1});
+        int[] mas = myNumArray.get(0);
+        System.out.println(mas[0]+ "," + mas[1] + "," + mas[2]);
         // 4.)
-        int a = 3;
-        int b = 56;
-        ArrayList<String> lsStr = hw2.MakingStrOfTwoNums(a,b);
-        lsStr.forEach((elem) -> System.out.println(elem));
+        System.out.println(hw3.ExtractItemFromList(0));
         // 5.)
-        System.out.println(hw2.DeleteandInsertCharEquals("2+2 = 4"));
+        System.out.println(hw3.ChangeByIndex(3, "Light Green"));
         // 6.)
-        System.out.println(hw2.ReplaceCharEquals("2+2 = 4"));
+        //System.out.println(hw3.DeleteThreeElemFromList());
         // 7.)
-        System.out.println(hw2.Comparison());
+        System.out.println(hw3.FindItemBySrting("AbraKadabra"));
+
     }
 }
 
